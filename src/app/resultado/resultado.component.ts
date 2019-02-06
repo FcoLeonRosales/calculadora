@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-resultado',
@@ -7,33 +7,9 @@ import { Component } from '@angular/core';
 })
 export class ResultadoComponent {
 
+  //padre al hijo
+  @Input() resultado: number;
+
   constructor() { }
 
-  resultado: number;
-  operadorA: number;
-  operadorB: number;
-  operador = 0;
-  onResultado() {
-
-    switch (this.operador) {
-      case 1:
-        this.resultado = this.operadorA + this.operadorB;
-        break;
-      case 2:
-      this.resultado = this.operadorA - this.operadorB;
-        break;
-      case 3:
-      this.resultado = this.operadorA / this.operadorB;
-        break;
-      case 4:
-      this.resultado = this.operadorA * this.operadorB;
-        break;
-      default:
-      this.resultado = 0;
-        break;
-    }
-  }
-  onOperador(a) {
-    this.operador = a;
-  }
 }
